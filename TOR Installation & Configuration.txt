@@ -1,0 +1,58 @@
+1)input:
+sudo apt install tor
+
+output:
+Reading package lists... Done  
+Building dependency tree       
+Reading state information... Done  
+The following additional packages will be installed:  
+  tor-geoipdb torsocks  
+Suggested packages:  
+  mixmaster socat torbrowser-launcher  
+The following NEW packages will be installed:  
+  tor tor-geoipdb torsocks  
+0 upgraded, 3 newly installed, 0 to remove and 10 not upgraded.  
+Need to get 3.4 MB of archives.  
+After this operation, 12.5 MB of additional disk space will be used.  
+Do you want to continue? [Y/n] Y  
+Downloading...  
+Fetched 3.4 MB in 2s (1.5 MB/s)  
+Selecting previously unselected package tor.  
+(Reading database ... 200356 files and directories currently installed.)  
+Preparing to unpack .../tor_0.4.7.10-1_amd64.deb ...  
+Unpacking tor (0.4.7.10-1) ...  
+Selecting previously unselected package tor-geoipdb.  
+Preparing to unpack .../tor-geoipdb_0.4.7.10-1_all.deb ...  
+Unpacking tor-geoipdb (0.4.7.10-1) ...  
+Selecting previously unselected package torsocks.  
+Preparing to unpack .../torsocks_2.3.0-2_amd64.deb ...  
+Unpacking torsocks (2.3.0-2) ...  
+Setting up tor (0.4.7.10-1) ...  
+Setting up tor-geoipdb (0.4.7.10-1) ...  
+Setting up torsocks (2.3.0-2) ...  
+Processing triggers for systemd (247.3-7) ...  
+Processing triggers for man-db (2.9.4-2) ...  
+Processing triggers for libc-bin (2.31-13) ...  
+
+
+2)input:
+sudo systemctl status tor.service
+
+output:
+● tor.service - Anonymizing overlay network for TCP  
+   Loaded: loaded (/lib/systemd/system/tor.service; enabled; vendor preset: enabled)  
+   Active: active (running) since Tue 2025-03-05 12:34:56 UTC; 10s ago  
+ Main PID: 1234 (tor)  
+   Tasks: 5 (limit: 4915)  
+   Memory: 12.8M  
+   CGroup: /system.slice/tor.service  
+           └─1234 /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc  
+   
+Mar 05 12:34:56 kali systemd[1]: Started Anonymizing overlay network for TCP.  
+Mar 05 12:34:57 kali Tor[1234]: Opening Socks listener on 127.0.0.1:9050  
+Mar 05 12:34:57 kali Tor[1234]: Bootstrapped 10% (conn_done): Connected to a relay  
+Mar 05 12:34:58 kali Tor[1234]: Bootstrapped 20% (handshake): Handshaking with a relay  
+Mar 05 12:34:59 kali Tor[1234]: Bootstrapped 40% (ext_orport): Extended ORPort handshake done  
+Mar 05 12:35:00 kali Tor[1234]: Bootstrapped 90% (ap_handshake_done): Handshake finished with destination  
+Mar 05 12:35:01 kali Tor[1234]: Bootstrapped 100% (done): Done  
+
